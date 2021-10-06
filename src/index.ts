@@ -1,9 +1,5 @@
-const test: {
-  a: string;
-  b: number;
-} = {
-  a: '1',
-  b: 2,
-};
+import Warrior from 'types/roles/warrior';
 
-console.log(test.a);
+const warrior = new Warrior();
+
+warrior.attack();
