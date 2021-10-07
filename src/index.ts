@@ -1,5 +1,8 @@
-import Warrior from 'types/roles/warrior';
+import simpleRoleFactory from './patterns/factory/simpleRoleFactory';
 
-const warrior = new Warrior();
+const { createRole } = simpleRoleFactory;
+const warrior = createRole('warrior');
+const marksman = createRole('marksman');
 
 warrior.attack();
+marksman.defend();
