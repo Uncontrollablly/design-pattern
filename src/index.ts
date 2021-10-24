@@ -1,8 +1,5 @@
-import simpleRoleFactory from './patterns/factory/simpleRoleFactory';
+import simpleFactoryDemo from 'patterns/factory/simpleFactory';
+import factoryMethodDemo from 'patterns/factory/factoryMethod';
 
-const { createRole } = simpleRoleFactory;
-const warrior = createRole('warrior');
-const marksman = createRole('marksman');
-
-warrior.attack();
-marksman.defend();
+simpleFactoryDemo();
+factoryMethodDemo();
