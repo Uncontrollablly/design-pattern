@@ -1,7 +1,7 @@
 import simpleFactory from './simpleFactory';
 
 export default (): void => {
-  console.log('simpleFactory demo: ');
+  console.log('Simple Factory demo: ');
 
   const { createRole } = simpleFactory;
   const warrior = createRole('warrior');
@@ -10,5 +10,5 @@ export default (): void => {
   warrior.attack();
   marksman.defend();
 
-  console.log('simpleFactory demo finish. \n');
+  console.log('Simple Factory demo finish. \n');
 };

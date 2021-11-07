@@ -1,7 +1,7 @@
 import { Singleton } from './types/Singleton';
 import SingletonUsedClosure from './singletonUsedClosure';
 
-export default (): void => {
+const clientCode = (): void => {
   const a = Singleton.getInstance();
   const b = Singleton.getInstance();
   if (a === b) {
@@ -19,4 +19,12 @@ export default (): void => {
     console.log('Singleton failed, variables contain different instances.');
   }
   c.show();
+};
+
+export default (): void => {
+  console.log('Singleton demo start: ');
+
+  clientCode();
+
+  console.log('Singleton demo finish. \n');
 };
