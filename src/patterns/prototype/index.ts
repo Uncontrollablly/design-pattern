@@ -49,9 +49,9 @@ const clientCode = () => {
 };
 
 export default (): void => {
-  console.log('Prototype demo start: ');
+  console.log('--------Prototype demo start--------');
 
   clientCode();
 
-  console.log('Prototype demo finish. \n');
+  console.log('--------Prototype demo finish-------- \n');
 };
