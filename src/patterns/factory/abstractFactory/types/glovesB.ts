@@ -1,4 +1,4 @@
-import Gloves from './types/gloves';
+import Gloves from './gloves';
 
 export default class GlovesB implements Gloves {
   name = 'ConcretGlovesB';

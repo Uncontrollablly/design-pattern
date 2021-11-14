@@ -12,8 +12,6 @@ function clientCode(component: Component) {
 }
 
 export default (): void => {
-  console.log('--------Decorator demo start--------');
-
   const simple = new ConcreteComponent();
   console.log("Client: I've got a simple component:");
   clientCode(simple);
@@ -22,6 +20,4 @@ export default (): void => {
   const decorator2 = new ConcreteDecoratorB(decorator1);
   console.log("Client: Now I've got a decorated component:");
   clientCode(decorator2);
-
-  console.log('--------Decorator demo finish-------- \n');
 };

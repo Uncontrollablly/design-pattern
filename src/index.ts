@@ -1,13 +1,7 @@
-import simpleFactoryDemo from 'patterns/factory/simpleFactory';
-import factoryMethodDemo from 'patterns/factory/factoryMethod';
-import abstractFactory from 'patterns/factory/abstractFactory';
-import singleton from 'patterns/singleton';
-import prototype from 'patterns/prototype';
-import decorator from 'patterns/decorator';
+import { demos } from './config';
 
-simpleFactoryDemo();
-factoryMethodDemo();
-abstractFactory();
-singleton();
-prototype();
-decorator();
+Object.entries(demos).forEach(([name, demo]) => {
+  console.log(`--------${name.toUpperCase()} demo start--------`);
+  demo();
+  console.log(`--------${name.toUpperCase()} demo finish--------\n`);
+});

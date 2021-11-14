@@ -1,8 +1,8 @@
 import GlovesA from './glovesA';
 import HelmetA from './helmetA';
-import EquipmentFactory from './types/equipmentFactory';
-import Gloves from './types/gloves';
-import Helmet from './types/helmet';
+import EquipmentFactory from './equipmentFactory';
+import Gloves from './gloves';
+import Helmet from './helmet';
 
 export default class FactoryA implements EquipmentFactory {
   creatGloves(): Gloves {

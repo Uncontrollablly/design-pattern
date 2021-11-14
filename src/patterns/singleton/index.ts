@@ -22,9 +22,5 @@ const clientCode = (): void => {
 };
 
 export default (): void => {
-  console.log('--------Singleton demo start--------');
-
   clientCode();
-
-  console.log('--------Singleton demo finish-------- \n');
 };
