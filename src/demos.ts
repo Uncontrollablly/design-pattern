@@ -5,7 +5,7 @@ import singleton from 'patterns/singleton';
 import prototype from 'patterns/prototype';
 import decorator from 'patterns/decorator';
 
-export const demos = {
+const demos: Record<string, () => void> = {
   simpleFactory,
   factoryMethod,
   abstractFactory,
@@ -13,3 +13,5 @@ export const demos = {
   prototype,
   decorator,
 };
+
+export default demos;
