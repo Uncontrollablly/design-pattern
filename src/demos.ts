@@ -4,6 +4,7 @@ import abstractFactory from 'patterns/factory/abstractFactory';
 import singleton from 'patterns/singleton';
 import prototype from 'patterns/prototype';
 import decorator from 'patterns/decorator';
+import adapter from 'patterns/adapter';
 
 const demos: Record<string, () => void> = {
   simpleFactory,
@@ -12,6 +13,7 @@ const demos: Record<string, () => void> = {
   singleton,
   prototype,
   decorator,
+  adapter,
 };
 
 export default demos;
