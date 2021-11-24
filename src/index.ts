@@ -12,24 +12,30 @@ const run = () => {
         type: 'rawlist',
         name: 'chosenPattern',
         message: 'Choose a pattern to run',
-        choices: Object.keys(demos).concat('exit'),
+        choices: Object.keys(demos),
         loop: false,
       },
     ])
     .then(({ chosenPattern }) => {
-      if (chosenPattern !== 'exit') {
+      if (Object.keys(demos).some((demo) => demo === chosenPattern)) {
         console.log(
-          `--------${chosenPattern.toUpperCase()} demo start--------`
+          chalk.yellow.italic.bold(
+            `\n--------${chosenPattern.toUpperCase()} DEMO START--------\n`
+          )
         );
 
         demos[chosenPattern]();
 
         console.log(
-          `--------${chosenPattern.toUpperCase()} demo finish--------\n`
+          chalk.yellow.italic.bold(
+            `\n-------${chosenPattern.toUpperCase()} DEMO FINISH--------\n`
+          )
         );
         setTimeout(run, 2000);
       } else {
-        console.log(chalk.yellow(figlet.textSync('Bye')));
+        console.log(
+          chalk.red.bgWhite.bold(`Pattern ${chosenPattern} not exist`)
+        );
       }
     });
 };
