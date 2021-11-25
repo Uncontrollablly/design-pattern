@@ -14,6 +14,7 @@ const run = () => {
         message: 'Choose a pattern to run',
         choices: Object.keys(demos),
         loop: false,
+        pageSize: 10,
       },
     ])
     .then(({ chosenPattern }) => {
