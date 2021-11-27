@@ -5,40 +5,36 @@ import inquirer from 'inquirer';
 
 console.log(chalk.greenBright(figlet.textSync('Design Patterns')));
 
-const run = () => {
-  inquirer
-    .prompt([
-      {
-        type: 'rawlist',
-        name: 'chosenPattern',
-        message: 'Choose a pattern to run',
-        choices: Object.keys(demos),
-        loop: false,
-        pageSize: 10,
-      },
-    ])
-    .then(({ chosenPattern }) => {
-      if (Object.keys(demos).some((demo) => demo === chosenPattern)) {
-        console.log(
-          chalk.yellow.italic.bold(
-            `\n--------${chosenPattern.toUpperCase()} DEMO START--------\n`
-          )
-        );
+const run = async () => {
+  const { chosenPattern } = await inquirer.prompt([
+    {
+      type: 'rawlist',
+      name: 'chosenPattern',
+      message: 'Choose a pattern to run',
+      choices: Object.keys(demos),
+      loop: false,
+      pageSize: 10,
+    },
+  ]);
 
-        demos[chosenPattern]();
+  if (Object.keys(demos).some((demo) => demo === chosenPattern)) {
+    console.log(
+      chalk.yellow.italic.bold(
+        `\n--------${chosenPattern.toUpperCase()} DEMO START--------\n`
+      )
+    );
 
-        console.log(
-          chalk.yellow.italic.bold(
-            `\n-------${chosenPattern.toUpperCase()} DEMO FINISH--------\n`
-          )
-        );
-        setTimeout(run, 2000);
-      } else {
-        console.log(
-          chalk.red.bgWhite.bold(`Pattern ${chosenPattern} not exist`)
-        );
-      }
-    });
+    await demos[chosenPattern]();
+
+    console.log(
+      chalk.yellow.italic.bold(
+        `\n-------${chosenPattern.toUpperCase()} DEMO FINISH--------\n`
+      )
+    );
+    setTimeout(run, 2000);
+  } else {
+    console.log(chalk.red.bgWhite.bold(`Pattern ${chosenPattern} not exist`));
+  }
 };
 
 run();

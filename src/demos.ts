@@ -6,6 +6,7 @@ import prototype from 'patterns/prototype';
 import decorator from 'patterns/decorator';
 import adapter from 'patterns/adapter';
 import proxy from 'patterns/proxy';
+import strategy from 'patterns/strategy';
 
 const demos: Record<string, () => void> = {
   simpleFactory,
@@ -16,6 +17,7 @@ const demos: Record<string, () => void> = {
   decorator,
   adapter,
   proxy,
+  strategy,
 };
 
 export default demos;
