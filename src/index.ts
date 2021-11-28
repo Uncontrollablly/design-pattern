@@ -13,7 +13,7 @@ const run = async () => {
       message: 'Choose a pattern to run',
       choices: Object.keys(demos),
       loop: false,
-      pageSize: 10,
+      pageSize: 15,
     },
   ]);
 
