@@ -7,7 +7,10 @@ export default class Context {
     this.strategy = strategy;
   }
 
-  executeStrategy(a: number, b: number): number {
-    return this.strategy.execute(a, b);
+  executeStrategy(a: number, b: number): void {
+    console.log(
+      `The result of applying ${this.strategy.constructor.name} to nunmbers ${a} and ${b} is: `,
+      this.strategy.execute(a, b)
+    );
   }
 }

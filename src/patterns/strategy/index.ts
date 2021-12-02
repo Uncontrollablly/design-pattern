@@ -2,6 +2,12 @@ import inquirer from 'inquirer';
 import ConcreteStrategyAdd from './types/concreteStrategyAdd';
 import ConcreteStrategySubtract from './types/concreteStrategySubtract';
 import Context from './types/context';
+import Strategy from './types/strategy';
+
+const getStrategyInstance: Record<string, Strategy> = {
+  addition: new ConcreteStrategyAdd(),
+  subtraction: new ConcreteStrategySubtract(),
+};
 
 export default async (): Promise<void> => {
   const context = new Context();
@@ -19,18 +25,6 @@ export default async (): Promise<void> => {
     },
   ]);
 
-  if (strategy === 'addition') {
-    context.setStrategy(new ConcreteStrategyAdd());
-  }
-
-  if (strategy === 'subtraction') {
-    context.setStrategy(new ConcreteStrategySubtract());
-  }
-
-  const result = context.executeStrategy(a, b);
-
-  console.log(
-    `The result of applying the strategy ${strategy} to nunmbers ${a} and ${b} is: `,
-    result
-  );
+  context.setStrategy(getStrategyInstance[strategy]);
+  context.executeStrategy(a, b);
 };
