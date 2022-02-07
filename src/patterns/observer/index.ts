@@ -1,5 +1,5 @@
-import ConcreteObserverA from './types/ConcreteObserverA';
-import ConcreteObserverB from './types/ConcreteObserverB';
+import ConcreteObserverA from './types/concreteObserverA';
+import ConcreteObserverB from './types/concreteObserverB';
 import Subject from './types/subject';
 
 export default (): void => {
