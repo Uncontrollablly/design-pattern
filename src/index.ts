@@ -24,7 +24,7 @@ const run = async () => {
       )
     );
 
-    await demos[chosenPattern]();
+    demos[chosenPattern]();
 
     console.log(
       chalk.yellow.italic.bold(
