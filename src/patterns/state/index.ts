@@ -11,6 +11,6 @@ export default (): void => {
   console.log('click next');
   player.clickNext();
 
-  console.log('click lock again to unlock palyer');
+  console.log('click lock again to unlock player');
   player.clickLock();
 };
