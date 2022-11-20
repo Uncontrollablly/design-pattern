@@ -1,4 +1,4 @@
-import Prototype from './Prototype';
+import Prototype from './prototype';
 
 export default class ComponentWithBackReference {
   public prototype;
